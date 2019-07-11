@@ -11,8 +11,9 @@ object Dependencies {
   )
 
   lazy val spark = Seq(
-    "org.apache.spark" %% "spark-core" % "2.4.2",
-    "org.apache.spark" %% "spark-sql" % "2.4.2"
+    // 以下のライブラリは、Spark実行環境に、spark-coreが存在するため、sbt assembly時には以下のライブラリはJarに含めない
+    "org.apache.spark" %% "spark-core" % "2.4.2" % "provided",
+    "org.apache.spark" %% "spark-sql" % "2.4.2" % "provided"
   )
 
   lazy val scalaTest = Seq(
