@@ -7,6 +7,8 @@ ThisBuild / organizationName := "pureone"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "apache-spark-learn",
+    name := "spark-sample-app",
+    mainClass in (Compile, run) := Some("com.github.pureone.Main2"),
     libraryDependencies ++= dependencies
   )
+assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)

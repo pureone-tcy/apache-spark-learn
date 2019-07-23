@@ -8,9 +8,12 @@ object Main {
   def main(args: Array[String]): Unit = {
 
     val conf = new SparkConf()
-    val sc = new SparkContext(conf)
-    val in = ""
-    val out = ""
+    val sc   = new SparkContext(conf)
+
+    println("----Start pure----")
+
+    val in   = "S3://tsuchiya-emr-test-bucket/work/in/dummy01.txt.gz"
+    val out  = "S3://tsuchiya-emr-test-bucket/work/output/"
 
     Try {
       sc.textFile(in)
@@ -24,6 +27,7 @@ object Main {
         println("Failure")
         println(e)
     }
+    println("----End pure----")
   }
 
 }
