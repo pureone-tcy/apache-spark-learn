@@ -3,7 +3,7 @@ import sbt._
 object Dependencies {
 
   def dependencies: Seq[ModuleID] = {
-    typesafe ++ spark ++ scalaTest
+    spark
   }
 
   lazy val typesafe = Seq(
@@ -11,8 +11,8 @@ object Dependencies {
   )
 
   lazy val spark = Seq(
-    "org.apache.spark" %% "spark-core" % "2.4.2" % "provided",
-    "org.apache.spark" %% "spark-sql" % "2.4.2" % "provided"
+    "org.apache.spark" %% "spark-core" % "2.2.3" % "provided",
+    "org.apache.spark" %% "spark-sql" % "2.2.3" % "provided"
   )
 
   lazy val scalaTest = Seq(

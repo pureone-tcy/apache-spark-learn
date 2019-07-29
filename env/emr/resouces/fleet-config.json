@@ -2,35 +2,54 @@
   {
     "Name": "MasterFleet",
     "InstanceFleetType": "MASTER",
-    "TargetOnDemandCapacity": 1,
-    "InstanceTypeConfigs": [{"InstanceType": "m3.xlarge"}]
-  },
-  {
-    "Name": "CoreFleet",
-    "InstanceFleetType": "CORE",
-    "TargetSpotCapacity": 3,
-    "TargetOnDemandCapacity": 3,
+    "TargetSpotCapacity": 1,
     "LaunchSpecifications": {
       "SpotSpecification": {
-        "TimeoutDurationMinutes": 20,
+        "TimeoutDurationMinutes": 5,
         "TimeoutAction": "SWITCH_TO_ON_DEMAND"
       }
     },
     "InstanceTypeConfigs": [
       {
-        "InstanceType": "r4.xlarge",
-        "BidPriceAsPercentageOfOnDemandPrice": 50,
+        "InstanceType": "m5.4xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100
+      },
+      {
+        "InstanceType": "m5.12xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100
+      }
+    ]
+  },
+  {
+    "Name": "CoreFleet",
+    "InstanceFleetType": "CORE",
+    "TargetSpotCapacity": 50,
+    "LaunchSpecifications": {
+      "SpotSpecification": {
+        "TimeoutDurationMinutes": 10,
+        "TimeoutAction": "SWITCH_TO_ON_DEMAND"
+      }
+    },
+    "InstanceTypeConfigs": [
+      {
+        "InstanceType": "r4.4xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
         "WeightedCapacity": 1
       },
       {
-        "InstanceType": "r4.2xlarge",
-        "BidPriceAsPercentageOfOnDemandPrice": 50,
-        "WeightedCapacity": 2
+        "InstanceType": "r5.4xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
       },
       {
-        "InstanceType": "r4.4xlarge",
-        "BidPriceAsPercentageOfOnDemandPrice": 50,
-        "WeightedCapacity": 4
+        "InstanceType": "r5d.4xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "r4.8xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
       }
     ]
   }
