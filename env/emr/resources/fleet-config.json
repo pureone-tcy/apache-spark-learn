@@ -1,0 +1,73 @@
+[
+  {
+    "Name": "MasterFleet",
+    "InstanceFleetType": "MASTER",
+    "TargetOnDemandCapacity": 1,
+    "InstanceTypeConfigs": [
+      {
+        "InstanceType": "i3.2xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "r5.2xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "r5d.2xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "m4.4xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "m5.4xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      }
+    ]
+  },
+  {
+    "Name": "CoreFleet",
+    "InstanceFleetType": "CORE",
+    "TargetSpotCapacity": 3,
+    "LaunchSpecifications": {
+      "SpotSpecification": {
+        "TimeoutDurationMinutes": 10,
+        "BlockDurationMinutes": 360,
+        "TimeoutAction": "SWITCH_TO_ON_DEMAND"
+      }
+    },
+    "InstanceTypeConfigs": [
+      {
+        "InstanceType": "i3.2xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "r5.2xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "r5d.2xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "m4.4xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      },
+      {
+        "InstanceType": "m5.4xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 100,
+        "WeightedCapacity": 1
+      }
+    ]
+  }
+]
